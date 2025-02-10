@@ -10,7 +10,7 @@
 
 Glide添加引用
 ``
-compile 'com.remix:circleseekbar:1.0.1'
+implementation 'com.github.CFD-team:CircleSeekbar:1.0.3'
 ``
 
 xml中引用
