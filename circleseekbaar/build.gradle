@@ -1,6 +1,5 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.novoda.bintray-release'
-
+apply plugin: 'maven-publish'
 android {
     compileSdkVersion 26
 
@@ -31,13 +30,22 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 }
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
 
-//22023ffcfad889ae487049a95f7c50fb522dfcef
-publish {
-    userOrg = 'xbr1010'
-    groupId = 'com.remix'
-    artifactId = 'circleseekbar'
-    publishVersion = '1.0.1'
-    desc = 'android circleSeekbar with shadow'
-    website = 'https://github.com/rRemix/CircleSeekbar'
+
+            groupId = 'com.remix'
+            artifactId = 'circleseekbar'
+            version = '1.0.1'
+            description = 'android circleSeekbar with shadow'
+
+        }
+    }
+
+    repositories {
+        maven {
+            url = uri('https://github.com/CFD-team/CircleSeekbar')
+        }
+    }
 }
